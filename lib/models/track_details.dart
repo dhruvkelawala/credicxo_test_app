@@ -1,54 +1,55 @@
-import './fragments/';
+import './fragments/primary_genres.dart';
 
 class TrackDetails {
-    TrackDetails({
-        this.trackId,
-        this.trackName,
-        this.trackNameTranslationList,
-        this.trackRating,
-        this.commontrackId,
-        this.instrumental,
-        this.explicit,
-        this.hasLyrics,
-        this.hasSubtitles,
-        this.hasRichsync,
-        this.numFavourite,
-        this.albumId,
-        this.albumName,
-        this.artistId,
-        this.artistName,
-        this.trackShareUrl,
-        this.trackEditUrl,
-        this.restricted,
-        this.updatedTime,
-        this.primaryGenres,
-    });
+  TrackDetails({
+    this.trackId,
+    this.trackName,
+    this.trackNameTranslationList,
+    this.trackRating,
+    this.commontrackId,
+    this.instrumental,
+    this.explicit,
+    this.hasLyrics,
+    this.hasSubtitles,
+    this.hasRichsync,
+    this.numFavourite,
+    this.albumId,
+    this.albumName,
+    this.artistId,
+    this.artistName,
+    this.trackShareUrl,
+    this.trackEditUrl,
+    this.restricted,
+    this.updatedTime,
+    this.primaryGenres,
+  });
 
-    int trackId;
-    String trackName;
-    List<dynamic> trackNameTranslationList;
-    int trackRating;
-    int commontrackId;
-    int instrumental;
-    int explicit;
-    int hasLyrics;
-    int hasSubtitles;
-    int hasRichsync;
-    int numFavourite;
-    int albumId;
-    String albumName;
-    int artistId;
-    String artistName;
-    String trackShareUrl;
-    String trackEditUrl;
-    int restricted;
-    DateTime updatedTime;
-    PrimaryGenres primaryGenres;
+  int trackId;
+  String trackName;
+  List<dynamic> trackNameTranslationList;
+  int trackRating;
+  int commontrackId;
+  int instrumental;
+  int explicit;
+  int hasLyrics;
+  int hasSubtitles;
+  int hasRichsync;
+  int numFavourite;
+  int albumId;
+  String albumName;
+  int artistId;
+  String artistName;
+  String trackShareUrl;
+  String trackEditUrl;
+  int restricted;
+  DateTime updatedTime;
+  PrimaryGenres primaryGenres;
 
-    factory TrackDetails.fromJson(Map<String, dynamic> json) => TrackDetails(
+  factory TrackDetails.fromJson(Map<String, dynamic> json) => TrackDetails(
         trackId: json["track_id"],
         trackName: json["track_name"],
-        trackNameTranslationList: List<dynamic>.from(json["track_name_translation_list"].map((x) => x)),
+        trackNameTranslationList: List<dynamic>.from(
+            json["track_name_translation_list"].map((x) => x)),
         trackRating: json["track_rating"],
         commontrackId: json["commontrack_id"],
         instrumental: json["instrumental"],
@@ -66,12 +67,13 @@ class TrackDetails {
         restricted: json["restricted"],
         updatedTime: DateTime.parse(json["updated_time"]),
         primaryGenres: PrimaryGenres.fromJson(json["primary_genres"]),
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "track_id": trackId,
         "track_name": trackName,
-        "track_name_translation_list": List<dynamic>.from(trackNameTranslationList.map((x) => x)),
+        "track_name_translation_list":
+            List<dynamic>.from(trackNameTranslationList.map((x) => x)),
         "track_rating": trackRating,
         "commontrack_id": commontrackId,
         "instrumental": instrumental,
@@ -89,5 +91,5 @@ class TrackDetails {
         "restricted": restricted,
         "updated_time": updatedTime.toIso8601String(),
         "primary_genres": primaryGenres.toJson(),
-    };
+      };
 }
