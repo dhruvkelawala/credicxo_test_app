@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Credicxo Test App"),
+          title: Text("Credicxo Test App", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),),
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.list, color: Colors.black,), text: "Top Charts",),
@@ -83,26 +83,3 @@ class _HomeState extends State<Home> {
   }
 }
 
-// body: FutureBuilder(
-//     // future: fetchTracks(),
-//     initialData: {},
-//     builder: (BuildContext context, AsyncSnapshot snapshot) {
-//       if (snapshot.connectionState == ConnectionState.done) {
-//         print(snapshot.data);
-//         return ListView.builder(
-//             itemCount: snapshot.data.length,
-//             itemBuilder: (BuildContext context, int index) {
-//               final Track track = snapshot.data[index];
-//               return ListTile(
-//                 title: Text(track.trackName),
-//                 subtitle: Text(track.trackRating.toString()),
-//               );
-//             });
-//       }
-//       return Center(
-//         child: Container(
-//           height: 50,
-//           child: CircularProgressIndicator(),
-//         ),
-//       );
-//     }),

@@ -40,7 +40,13 @@ class _LyricsWidgetState extends State<LyricsWidget> {
         }
         if (state is LyricsLoaded) {
           Lyrics lyrics = state.lyrics;
-          return Text(lyrics.lyricsBody);
+          return Container(
+              margin: EdgeInsets.only(top: 12),
+              child: Text(
+            lyrics.lyricsBody,
+            style: TextStyle(fontSize: 17, color: Color(0xBFFFFFFF)),
+            textAlign: TextAlign.center,
+          ));
         }
         return Loading();
       }),

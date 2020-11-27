@@ -24,21 +24,24 @@ class _BookmarkWidgetState extends State<BookmarkWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: hiveTracksBox.listenable(),
-      builder: (context, Box<HiveTrack> box, _) => Container(
-        child: GestureDetector(
-          child: getIcon(box),
-          onTap: () async {
-            if (box.containsKey(widget.id)) {
-              print(box.get(widget.id).name + " deleted");
-              await box.delete(widget.id);
-            } else {
-              await box.put(
-                  widget.id, HiveTrack(id: widget.id, name: widget.name));
-              print(box.get(widget.id).name + " added");
-            }
-          },
+    return Container(
+      margin: EdgeInsets.only(right: 30),
+      child: ValueListenableBuilder(
+        valueListenable: hiveTracksBox.listenable(),
+        builder: (context, Box<HiveTrack> box, _) => Container(
+          child: GestureDetector(
+            child: getIcon(box),
+            onTap: () async {
+              if (box.containsKey(widget.id)) {
+                print(box.get(widget.id).name + " deleted");
+                await box.delete(widget.id);
+              } else {
+                await box.put(
+                    widget.id, HiveTrack(id: widget.id, name: widget.name));
+                print(box.get(widget.id).name + " added");
+              }
+            },
+          ),
         ),
       ),
     );
@@ -46,7 +49,7 @@ class _BookmarkWidgetState extends State<BookmarkWidget> {
 
   Widget getIcon(Box<HiveTrack> box) {
     if (box.containsKey(widget.id)) {
-      return Icon(Icons.bookmark);
+      return Icon(Icons.bookmark, color: Colors.redAccent,);
     }
     return Icon(Icons.bookmark_border);
   }
