@@ -1,4 +1,4 @@
-import 'fragments/primary_genres.dart';
+import './fragments/primary_genres.dart';
 
 
 class Track {

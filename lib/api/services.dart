@@ -1,9 +1,10 @@
 import 'dart:convert';
-import 'package:credicxo_test_app/models/track_details.dart';
-import 'package:credicxo_test_app/models/track_lyrics.dart';
+import 'package:http/http.dart' as http;
+
+import '../models/track_details.dart';
+import '../models/track_lyrics.dart';
 
 import '../models/track.dart';
-import 'package:http/http.dart' as http;
 
 abstract class TracksRepo {
   Future<List<Track>> fetchTracks();

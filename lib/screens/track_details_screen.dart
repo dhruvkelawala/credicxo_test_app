@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
-import 'package:credicxo_test_app/bloc/trackDetailsBloc/track_details_bloc.dart';
-import 'package:credicxo_test_app/models/track.dart';
-import 'package:credicxo_test_app/models/track_details.dart';
-import 'package:credicxo_test_app/widgets/bookmark_widget.dart';
-import 'package:credicxo_test_app/widgets/error_text.dart';
-import 'package:credicxo_test_app/widgets/loading.dart';
-import 'package:credicxo_test_app/widgets/lyrics_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../bloc/trackDetailsBloc/track_details_bloc.dart';
+import '../models/track_details.dart';
+import '../widgets/bookmark_widget.dart';
+import '../widgets/error_text.dart';
+import '../widgets/loading.dart';
+import '../widgets/lyrics_widget.dart';
 
 class TrackDetailsScreen extends StatefulWidget {
   final int id;
@@ -51,7 +51,10 @@ class _TrackDetailsScreenState extends State<TrackDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),),
+        title: Text(
+          widget.name,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+        ),
         actions: [
           BookmarkWidget(
             id: widget.id,
@@ -122,7 +125,10 @@ class _TrackDetailsScreenState extends State<TrackDetailsScreen> {
             isUrl
                 ? TextSpan(
                     text: value,
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14, color: Color(0xBFFFFFFF)),
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14,
+                        color: Color(0xBFFFFFFF)),
                     recognizer: new TapGestureRecognizer()
                       ..onTap = () async {
                         if (await canLaunch(value)) {
@@ -134,7 +140,10 @@ class _TrackDetailsScreenState extends State<TrackDetailsScreen> {
                   )
                 : TextSpan(
                     text: value,
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14, color: Color(0xBFFFFFFF)),
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14,
+                        color: Color(0xBFFFFFFF)),
                   )
           ])),
     );

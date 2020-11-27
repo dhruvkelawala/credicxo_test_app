@@ -1,10 +1,10 @@
-import 'package:credicxo_test_app/bloc/LyricsBloc/lyrics_bloc.dart';
-import 'package:credicxo_test_app/models/track_lyrics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'error_text.dart';
-import 'loading.dart';
+import '../bloc/LyricsBloc/lyrics_bloc.dart';
+import '../models/track_lyrics.dart';
+import './error_text.dart';
+import './loading.dart';
 
 class LyricsWidget extends StatefulWidget {
   final int id;

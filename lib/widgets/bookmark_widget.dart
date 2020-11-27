@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import '../hiveModels/hive_track.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
+import '../hiveModels/hive_track.dart';
 
 class BookmarkWidget extends StatefulWidget {
   BookmarkWidget({this.id, this.name});
@@ -49,7 +50,10 @@ class _BookmarkWidgetState extends State<BookmarkWidget> {
 
   Widget getIcon(Box<HiveTrack> box) {
     if (box.containsKey(widget.id)) {
-      return Icon(Icons.bookmark, color: Colors.redAccent,);
+      return Icon(
+        Icons.bookmark,
+        color: Colors.redAccent,
+      );
     }
     return Icon(Icons.bookmark_border);
   }

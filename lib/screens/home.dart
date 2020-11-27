@@ -1,14 +1,15 @@
 import 'dart:async';
 
-import 'package:connectivity/connectivity.dart';
-import 'package:credicxo_test_app/bloc/tracksBloc/tracks_bloc.dart';
-import 'package:credicxo_test_app/models/track.dart';
-import 'package:credicxo_test_app/screens/bookmark_screen.dart';
-import 'package:credicxo_test_app/widgets/error_text.dart';
-import 'package:credicxo_test_app/widgets/loading.dart';
-import 'package:credicxo_test_app/widgets/track_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:connectivity/connectivity.dart';
+import '../bloc/tracksBloc/tracks_bloc.dart';
+import '../models/track.dart';
+import '../screens/bookmark_screen.dart';
+import '../widgets/error_text.dart';
+import '../widgets/loading.dart';
+import '../widgets/track_list_widget.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -47,11 +48,26 @@ class _HomeState extends State<Home> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Credicxo Test App", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),),
+          title: Text(
+            "Credicxo Test App",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          ),
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.list, color: Colors.black,), text: "Top Charts",),
-              Tab(icon: Icon(Icons.bookmarks, color: Colors.black,), text: "Bookmarks",),
+              Tab(
+                icon: Icon(
+                  Icons.list,
+                  color: Colors.black,
+                ),
+                text: "Top Charts",
+              ),
+              Tab(
+                icon: Icon(
+                  Icons.bookmarks,
+                  color: Colors.black,
+                ),
+                text: "Bookmarks",
+              ),
             ],
           ),
         ),
@@ -82,4 +98,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-

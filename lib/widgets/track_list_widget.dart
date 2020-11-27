@@ -1,6 +1,7 @@
-import 'package:credicxo_test_app/models/track.dart';
-import 'package:credicxo_test_app/screens/track_details_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../models/track.dart';
+import '../screens/track_details_screen.dart';
 
 class TrackListWidget extends StatelessWidget {
   final List<Track> tracks;

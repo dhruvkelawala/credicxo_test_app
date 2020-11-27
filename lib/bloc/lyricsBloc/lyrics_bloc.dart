@@ -2,9 +2,10 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:credicxo_test_app/api/exceptions.dart';
-import 'package:credicxo_test_app/api/services.dart';
-import 'package:credicxo_test_app/models/track_lyrics.dart';
+
+import '../../api/exceptions.dart';
+import '../../api/services.dart';
+import '../../models/track_lyrics.dart';
 import 'package:equatable/equatable.dart';
 
 part 'lyrics_event.dart';
@@ -19,7 +20,7 @@ class LyricsBloc extends Bloc<LyricsEvent, LyricsState> {
   Stream<LyricsState> mapEventToState(
     LyricsEvent event,
   ) async* {
-   if (event is FetchLyrics) {
+    if (event is FetchLyrics) {
       yield LyricsLoading();
 
       try {

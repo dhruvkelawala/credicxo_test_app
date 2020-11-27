@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:credicxo_test_app/api/exceptions.dart';
-import 'package:credicxo_test_app/models/track.dart';
-import 'package:credicxo_test_app/api/services.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../api/exceptions.dart';
+import '../../models/track.dart';
+import '../../api/services.dart';
 
 part 'tracks_event.dart';
 part 'tracks_state.dart';

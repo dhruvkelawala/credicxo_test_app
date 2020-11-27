@@ -1,4 +1,4 @@
-import 'fragments/primary_genres.dart';
+import './fragments/';
 
 class TrackDetails {
     TrackDetails({

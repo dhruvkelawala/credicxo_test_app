@@ -1,11 +1,12 @@
-import 'package:credicxo_test_app/api/services.dart';
-import 'package:credicxo_test_app/bloc/tracksBloc/tracks_bloc.dart';
-import 'package:credicxo_test_app/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import './api/services.dart';
+import './bloc/tracksBloc/tracks_bloc.dart';
+import './themes/theme.dart';
 import './screens/home.dart';
-import 'bloc/LyricsBloc/lyrics_bloc.dart';
-import 'bloc/trackDetailsBloc/track_details_bloc.dart';
+import './bloc/LyricsBloc/lyrics_bloc.dart';
+import './bloc/trackDetailsBloc/track_details_bloc.dart';
 
 class MyApp extends StatelessWidget {
   @override
