@@ -38,9 +38,6 @@ class TrackServices implements TracksRepo {
 
     print(id);
 
-    // final http.Response resp = await http
-    //     .get("$BASE_URL/ws/1.1/track.get?track_id=$id&apikey=$API_KEY");
-
     final http.Response resp = await http.get(
         "https://api.musixmatch.com/ws/1.1/track.get?track_id=$id&apikey=$API_KEY");
 
